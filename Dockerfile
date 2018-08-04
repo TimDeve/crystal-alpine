@@ -1,0 +1,22 @@
+FROM alpine:3.8
+
+RUN apk add --update \
+  crystal \
+  shards \
+  g++ \
+  gc-dev \
+  libc-dev \
+  libevent-dev \
+  libxml2-dev \
+  llvm \
+  llvm-dev \
+  llvm-libs \
+  llvm-static \
+  make \
+  openssl \
+  openssl-dev \
+  pcre-dev \
+  readline-dev \
+  yaml-dev \
+  zlib-dev
+
