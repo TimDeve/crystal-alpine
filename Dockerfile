@@ -1,4 +1,4 @@
-FROM alpine:3.8
+FROM alpine:3.10
 
 RUN apk add --update \
   crystal \
@@ -8,10 +8,10 @@ RUN apk add --update \
   libc-dev \
   libevent-dev \
   libxml2-dev \
-  llvm \
-  llvm-dev \
-  llvm-libs \
-  llvm-static \
+  llvm8 \
+  llvm8-dev \
+  llvm8-libs \
+  llvm8-static \
   make \
   openssl \
   openssl-dev \
