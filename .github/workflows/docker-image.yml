@@ -13,8 +13,10 @@ jobs:
       run: date +%s > time
 
     - name: Build the Docker container image
-      run: docker build -t ghcr.io/timdeve/crystal-alpine/crystal-alpine:$(cat time) .
-
+      run: |
+        docker build -t ghcr.io/timdeve/crystal-alpine/crystal-alpine .
+        docker tag ghcr.io/timdeve/crystal-alpine/crystal-alpine ghcr.io/timdeve/crystal-alpine/crystal-alpine:$(cat time)
+        
     - name: Push the image to GPR
       run: |
         echo $GITHUB_PACKAGE_REGISTRY_TOKEN | docker login ghcr.io -u TimDeve --password-stdin
